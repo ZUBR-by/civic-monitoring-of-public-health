@@ -505,6 +505,7 @@ p.quote:after {
 .txt-size-20px {font-size:20px;}
 .txt-size-22px {font-size:22px;}
 .txt-size-24px {font-size:24px;}
+.txt-size-26px {font-size:26px;}
 .txt-size-28px {font-size:28px;}
 .txt-size-32px {font-size:32px;}
 .txt-size-34px {font-size:34px;}
@@ -617,6 +618,9 @@ p.quote:after {
 .pdng-t-40px {padding-top:40px;}
 .pdng-t-50px {padding-top:50px;}
 .pdng-t-80px {padding-top:80px;}
+.pdng-t-90px {padding-top:90px;}
+.pdng-t-100px {padding-top:100px;}
+.pdng-t-140px {padding-top:140px;}
 .pdng-t-5prc {padding-top:5%;}
 .pdng-t-10prc {padding-top:10%;}
 .pdng-t-20prc {padding-top:20%;}
@@ -835,11 +839,13 @@ h1, a, .button, .txt-color-1 {color:#FF5C01;}
     .mil-mrgn-l-10px {margin-left:10px;}
     .mil-mrgn-l-20px {margin-left:20px;}
 
-    .mil-pdng-2_5prc {padding:2.5%}
     .mil-pdng-0 {padding:0;}
+    .mil-pdng-2_5prc {padding:2.5%}
+    .mil-pdng-5px {padding:5px;}
     .mil-pdng-10px {padding:10px;}
     .mil-pdng-15px {padding:15px;}
     .mil-pdng-20px {padding:20px;}
+    .mil-pdng-30px {padding:30px;}
 
     .mil-pdng-t-0 {padding-top:0;}
     .mil-pdng-t-5px {padding-top:5px;}
@@ -848,6 +854,8 @@ h1, a, .button, .txt-color-1 {color:#FF5C01;}
     .mil-pdng-t-30px {padding-top:30px;}
     .mil-pdng-t-50px {padding-top:50px;}
     .mil-pdng-t-60px {padding-top:60px;}
+    .mil-pdng-t-80px {padding-top:80px;}
+    .mil-pdng-t-100px {padding-top:100px;}
 
 
     .mil-pdng-l-0 {padding-left:0;}
@@ -862,6 +870,7 @@ h1, a, .button, .txt-color-1 {color:#FF5C01;}
     .mil-pdng-r-20px {padding-right:20px;}
 
 
+    .mil-pdng-b-0 {padding-bottom:0;}
     .mil-pdng-b-5px {padding-bottom:5px;}
     .mil-pdng-b-10px {padding-bottom:10px;}
     .mil-pdng-b-20px {padding-bottom:20px;}
