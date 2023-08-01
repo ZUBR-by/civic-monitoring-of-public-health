@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>{{ .Site.Title }}</title>
+    <link rel="stylesheet" href="/css/_zubr-framework.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<header class="header-wrp">
+    <div class="header inline-flex flex-algn-itms-c">
+        <a href="#" class="section logo-btn">
+            <img src="/imgs/ui/logo.svg" alt="Сivic Health Monitoring">
+        </a>
+        <div class="section mobnav notdisplay mil-show">
+            <input id="brgrbtn" class="notdisplay mil-show" type="checkbox">
+            <label for="brgrbtn" class="notdisplay burger-button mil-show">
+                <div class="burger-button-line"></div>
+                <div class="burger-button-line"></div>
+                <div class="burger-button-line"></div>
+            </label>
+            <div class="brgr-nav notdisplay mil-show">
+                <div class="brgr-nav-links">
+                    <a class="header-lnk" href="#">Investigations</a>
+                </div>
+                <div class="brgr-nav-links">
+                    <a class="header-lnk" href="#">Medical institutions</a>
+                </div>
+                <div class="brgr-nav-links">
+                    <a class="header-lnk txt-size-20px" href="#">Statistics</a>
+                </div>
+                <div class="brgr-nav-links">
+                    <a class="header-lnk txt-size-20px" href="#">About the initiative</a>
+                </div>
+
+                <div style="position:absolute; bottom:20px; left:20px;" class="txt-size-12px">©2023 Civil Health Monitoring</div>
+            </div>
+        </div>
+        <div class="section mil-notdisplay">
+            <a class="header-lnk" href="#">Investigations</a>
+            <a class="header-lnk" href="#">Medical institutions</a>
+            <a class="header-lnk" href="#">Statistics</a>
+        </div>
+    </div>
+</header>
+{{ block "main" . }}{{end}}
+<footer class="footer inline-flex">
+    <div class="section">
+        <span class="">©2023 Civil Health Monitoring</span>
+        <a class="header-lnk mrgn-l-30px" href="#">About the initiative</a>
+    </div>
+</footer>
+</body>
+</html>

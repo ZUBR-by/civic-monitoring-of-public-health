@@ -8,6 +8,112 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/* Burger Menu */
+#brgrbtn {
+  position:absolute;
+  width:0;
+  height:0;
+  opacity:0;
+  z-index:-1;
+  }
+.burger-button {
+  display:inline-block;
+  width:36px;
+  height:36px;
+  transition: all 0.2s ease-in;
+  z-index:10;
+  }
+.burger-button-line {
+  position:absolute;
+  width:30px;
+  height:4px;
+  background:red;
+  border-radius:10px;
+  transition: all 0.3s ease-in;
+  }
+.burger-button-line:first-child {
+  left:3px;
+  top:6px;
+  }
+.burger-button-line:nth-child(2) {
+  left:3px;
+  top:16px;
+  }
+.burger-button-line:last-child {
+  left:3px;
+  bottom:6px;
+  }
+input#brgrbtn:checked + .burger-button,
+.burger-button.close {
+  transform:rotate(90deg);
+  }
+input#brgrbtn:checked + .burger-button .burger-button-line:first-child,
+.burger-button.close .burger-button-line:first-child {
+  top: 16px;
+  transform:rotate(-45deg);
+  background:#FF5C01;
+  }
+input#brgrbtn:checked + .burger-button .burger-button-line:nth-child(2),
+.burger-button.close .burger-button-line:nth-child(2) {
+  opacity:0;
+  }
+input#brgrbtn:checked + .burger-button .burger-button-line:last-child,
+.burger-button.close .burger-button-line:last-child {
+  bottom: 16px;
+  transform:rotate(45deg);
+  background:#FF5C01;
+  }
+.brgr-nav {
+  position:fixed;
+  top:0;
+  left:-100%;
+  width:65%;
+  height:100%;
+  padding:100px 5% 10% 5%;
+  background:transparent;
+  transition: all 0.35s ease-in;
+  opacity:0;
+  z-index:5;
+  }
+.brgr-nav:after {
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(255,255,255, 0.8);
+  backdrop-filter:blur(10px);
+  box-shadow:rgba(0,0,0,0.15) 0 0 60px;
+  z-index:-1;
+  }
+.brgr-nav * {}
+input#brgrbtn:checked + label + .brgr-nav {
+  left:0;
+  opacity:1;
+  }
+.brgr-nav-links {
+  padding:15px 0;
+  }
+.brgr-nav-links .header-lnk {
+  font-size:18px;
+  }
+.brgr-nav-links .button {
+  display:block;
+  font-size:22px;
+  text-transform:none;
+  margin:15px 0;
+  border-color:rgba(255,255,255,0.15);
+  }
+.brgr-nav .lang-swicher {
+  position:absolute;
+  left:5%;
+  top:2.49%;
+  background:rgba(255,255,255,0.2);
+  }
+
+
+
 /* Header */
 .header {
   position:fixed;
@@ -24,7 +130,8 @@
   flex-shrink:0;
   padding:15px 30px;
   }
-.header .section + .section:after {
+.header .section + .section:after,
+.header .section.mobnav:after {
   content:'';
   position:absolute;
   left:-1px;
@@ -89,7 +196,6 @@
   background:#fff;
   border-radius:30px;
   box-shadow:rgba(0,0,0,0.15) 0 5px 35px;
-  padding:100px 50px 50px 50px;
   }
 .post-wrp hr,
 .post-wrp h1,
@@ -102,6 +208,12 @@
 
 h1, a, .button, .txt-color-1 {
   color:#ff0000;
+  }
+.button, .input, .textarea {
+  border-color:red;
+  }
+.button:hover, .button.active, .button.primary {
+  background:red;
   }
 hr {
   height:3px;
@@ -155,9 +267,12 @@ p.quote:after {
 
 .post-wrp table {
   width:100%;
-  margin:40px 0;
   border-collapse:collapse;
-  table-layout: fixed;
+  table-layout: auto;
+  }
+.post-wrp .table-wrapper {
+  margin:30px -50px;
+  padding:10px 50px;
   }
 .post-wrp table td {
   vertical-align:top;
@@ -234,12 +349,16 @@ p.quote:after {
   background: #fff;
   border-radius: 30px;
   box-shadow: rgba(0,0,0,0.15) 0 5px 35px;
-  padding: 50px 20px 20px 20px;
   }
 .placelist-wrp {}
+.placelist-wrp .post-nav {
+  left:0;
+  margin:0 40px 0 40px;
+  }
 
 
 /* Place View */
+.placeview-wrp {}
 .placeview-info {
   max-width: 1280px;
   min-height:300px;
@@ -247,8 +366,61 @@ p.quote:after {
   border-radius: 30px;
   box-shadow: rgba(0,0,0,0.15) 0 5px 35px;
   }
+.placeview-wrp .placeview-map-wrp {
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  }
 
+.region-list-links {}
+.region-list-links li {
+  list-style:none;
+  padding:5px 0;
+  }
+.region-list-links a {
+  color:#000;
+  }
+.region-list-links a:hover {
+  color:red;
+  text-decoration:underline;
+  }
+.region-block {
+  background:#fff;
+  padding:30px 20px 25px 20px;
+  border:#E5E5E5 1px solid;
+  border-radius:30px;
+  box-shadow:rgba(0,0,0,.1) 0 5px 20px;
+  transition:box-shadow 0.3s linear;
+  }
+.region-block:hover {
+  box-shadow:rgba(0,0,0,.2) 0 10px 30px;
+  }
+.region-block.link {
+  height:100%;
+  display:flex;
+  align-items:center;
+  }
+.region-block.link:hover {
+  }
+.region-block.link h2 {
+  font-size:20px;
+  font-weight:500;
+  }
+.region-emblem {
+  display:block;
+  height:60px;
+  }
 
+.locality-list {
+  padding:10px 20px 0 20px;
+  }
+.locality-list .region-list-links li {
+  width:25%;
+  padding:15px 15px 15px 0;
+  }
+.locality-list h3 {
+  font-size:18px;
+  }
 
 
 /* UI elements */
@@ -279,4 +451,91 @@ p.quote:after {
 .infoblock-name {
   font-weight:500;
   padding:0 0 2px 0;
+  }
+
+
+@media (max-width: 820px) {
+  @viewport {
+    width:device-width;
+    }
+  @-ms-viewport {
+    width:device-width;
+    }
+
+  .header {
+    top:5px;
+    left:5px;
+    }
+  .header .section {
+    padding:10px 20px;
+    }
+  .header .logo-btn {
+    order:2;
+    padding-right:30px !important;
+    padding-left:15px !important;
+    z-index:101;
+    }
+  .header .mobnav {
+    order:1;
+    padding-right:20px !important;
+    }
+  .header .section.mobnav:after {
+    right:1px;
+    left:initial;
+    }
+
+  .footer {
+    white-space:nowrap;
+    margin:20px 10px;
+    }
+  .footer .section {
+    padding:15px 20px;
+    }
+  .post-nav {
+    line-height:1.5em;
+    }
+  .post-nav span.mrgn-l-10px {
+    margin-left:5px;
+    }
+  .post-nav span.mrgn-r-10px {
+    margin-right:5px;
+    }
+
+  .post-wrp .table-wrapper {
+    margin:30px -20px;
+    padding:10px 20px;
+    }
+  .post-wrp .post-additions {
+    position:relative;
+    left:initial;
+    margin:20px 0;
+    order:2;
+    }
+  .post-wrp .post-content {
+    order:1;
+    }
+
+  .placeview-wrp .post-nav-wrp {
+    height:130px;
+    }
+  .placeview-wrp .post-nav {
+    left:20px;
+    right:20px;
+    }
+  .placelist-wrp .post-nav-wrp {
+    height:140px;
+    }
+  .placelist-wrp .post-nav {
+    margin:0 20px 0 20px;
+    }
+  .placeview-wrp .placeview-map-wrp {
+    height:300px;
+    border-radius:0 0 30px 30px;
+    }
+
+  .locality-list .region-list-links li {
+    width:100%;
+    }
+
+
   }
