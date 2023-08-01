@@ -78,3 +78,11 @@
     </div>
 </div>
 {{end}}
+
+{{ define "assets"}}
+<script>
+    var regions = {{ $.Site.Data.regions | jsonify  | safeJS}};
+</script>
+{{ .Scratch.Set "entry" "facility_list" }}
+{{ partial "assets" . }}
+{{end}}

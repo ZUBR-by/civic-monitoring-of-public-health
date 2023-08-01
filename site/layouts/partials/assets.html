@@ -1,0 +1,29 @@
+{{ $entry := print "src/" (.Scratch.Get "entry") ".js" }}
+{{- if not hugo.IsProduction -}}
+<script type="module" src="http://localhost:5173/@vite/client"></script>
+<script type="module" src="http://localhost:5173/{{$entry}}"></script>
+{{ else }}
+
+{{ $manifest := getJSON "assets/generated/manifest.json" }}
+{{ $entry := index $manifest $entry}}
+{{ $entryJs := resources.Get (print "generated/" (index $entry "file")) }}
+<script type="module" src="{{$entryJs.Permalink}}"></script>
+{{ range $val := (index $entry "imports")}}
+    {{ $sub := index $manifest $val}}
+    {{ $subFileEntry := resources.Get (print "generated/" (index $sub "file"))}}
+<script type="module" src="{{$subFileEntry.Permalink}}"></script>
+    {{if (isset $sub "css") }}
+        {{ range $cssVal := (index $sub "css")}}
+        {{$css := resources.Get (print "generated/" $cssVal) }}
+        <link rel="stylesheet" href="{{$css.Permalink}}"/>
+        {{ end }}
+    {{ end }}
+{{ end }}
+{{if isset $entry "css" }}
+    {{ range $val := (index $entry "css")}}
+    {{$css := resources.Get (print "generated/" $val) }}
+    <link rel="stylesheet" href="{{$css.Permalink}}"/>
+    {{ end }}
+{{ end }}
+
+{{- end -}}

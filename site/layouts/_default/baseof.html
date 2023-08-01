@@ -11,7 +11,7 @@
 <body>
 <header class="header-wrp">
     <div class="header inline-flex flex-algn-itms-c">
-        <a href="#" class="section logo-btn">
+        <a href="/" class="section logo-btn">
             <img src="/imgs/ui/logo.svg" alt="Сivic Health Monitoring">
         </a>
         <div class="section mobnav notdisplay mil-show">
@@ -26,7 +26,7 @@
                     <a class="header-lnk" href="#">Investigations</a>
                 </div>
                 <div class="brgr-nav-links">
-                    <a class="header-lnk" href="#">Medical institutions</a>
+                    <a class="header-lnk" href="/facility/">Medical institutions</a>
                 </div>
                 <div class="brgr-nav-links">
                     <a class="header-lnk txt-size-20px" href="#">Statistics</a>
@@ -40,7 +40,7 @@
         </div>
         <div class="section mil-notdisplay">
             <a class="header-lnk" href="#">Investigations</a>
-            <a class="header-lnk" href="#">Medical institutions</a>
+            <a class="header-lnk" href="/facility/">Medical institutions</a>
             <a class="header-lnk" href="#">Statistics</a>
         </div>
     </div>
@@ -53,4 +53,6 @@
     </div>
 </footer>
 </body>
+{{ block "assets" . }}
+{{end}}
 </html>
