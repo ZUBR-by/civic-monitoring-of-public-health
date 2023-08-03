@@ -442,6 +442,12 @@ p.quote:after {
 .flex-algn-slf-s {align-self:start;}
 .flex-algn-slf-e {align-self:end;}
 
+.order-1 {order:1;}
+.order-2 {order:2;}
+.order-3 {order:3;}
+.order-4 {order:4;}
+.order-5 {order:5;}
+
 .flex-shrink {flex-shrink:1;}
 .flex-noshrink {flex-shrink:0;}
 .flex-wrap {flex-wrap:wrap;}
@@ -813,6 +819,12 @@ h1, a, .button, .txt-color-1 {color:#FF5C01;}
     .mil-flex-algn-itms-s {align-items:start;}
     .mil-flex-algn-itms-c {align-items:center;}
     .mil-flex-algn-itms-strch {align-items:stretch;}
+
+    .mil-order-1 {order:1;}
+    .mil-order-2 {order:2;}
+    .mil-order-3 {order:3;}
+    .mil-order-4 {order:4;}
+    .mil-order-5 {order:5;}
 
 
     .mil-size-10 {width:10%;}

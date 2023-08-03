@@ -597,5 +597,12 @@ sup a:hover {text-decoration:underline;}
     width:100%;
     }
 
+  .stats-mark {
+    position:relative;
+    left:0;
+    top:0;
+    display:inline-block;
+    margin-bottom:15px;
+    }
 
   }
