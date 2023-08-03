@@ -617,6 +617,8 @@ p.quote:after {
 .pdng-t-30px {padding-top:30px;}
 .pdng-t-40px {padding-top:40px;}
 .pdng-t-50px {padding-top:50px;}
+.pdng-t-60px {padding-top:60px;}
+.pdng-t-50px {padding-top:50px;}
 .pdng-t-80px {padding-top:80px;}
 .pdng-t-90px {padding-top:90px;}
 .pdng-t-100px {padding-top:100px;}
@@ -643,6 +645,11 @@ p.quote:after {
 .pdng-b-30px {padding-bottom:30px;}
 .pdng-b-40px {padding-bottom:40px;}
 .pdng-b-50px {padding-bottom:50px;}
+.pdng-b-60px {padding-bottom:60px;}
+.pdng-b-70px {padding-bottom:70px;}
+.pdng-b-80px {padding-bottom:80px;}
+.pdng-b-90px {padding-bottom:90px;}
+.pdng-b-100px {padding-bottom:100px;}
 .pdng-b-5prc {padding-bottom:5%;}
 
 .pdng-l-5px {padding-left:5px;}
