@@ -196,7 +196,7 @@ input#brgrbtn:checked + label + .brgr-nav {
   background:#fff;
   border-radius:30px;
   box-shadow:rgba(0,0,0,0.15) 0 5px 35px;
-  transition:box-shadow 0.2s ease-in;
+  transition:box-shadow 0.15s ease-in;
   }
 .post-wrp:hover {
   box-shadow:rgba(0,0,0,0.2) 0 5px 40px;
@@ -227,7 +227,7 @@ input#brgrbtn:checked + label + .brgr-nav {
   background:#fff;
   border-radius:30px;
   box-shadow:rgba(0,0,0,0.15) 0 5px 35px;
-  transition:box-shadow 0.2s ease-in;
+  transition:box-shadow 0.15s ease-in;
   }
 .partner-wrp:hover {
   box-shadow:rgba(0,0,0,0.2) 0 5px 40px;
