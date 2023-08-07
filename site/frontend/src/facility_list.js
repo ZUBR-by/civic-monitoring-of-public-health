@@ -1,3 +1,12 @@
+import { createApp, ref } from 'vue'
 
+const region = ref(null);
 
-console.log('it is works!')
+createApp({
+    setup() {
+        return {
+            region
+        }
+    }
+}).mount('#app')
+
