@@ -1,41 +1,37 @@
 {{ define "main"}}
-<div class="content pdng-30px pdng-t-140px mil-pdng-10px mil-pdng-t-100px">
+<div class="content pdng-30px pdng-t-140px mil-pdng-10px mil-pdng-t-100px" id="app">
     <div class="placelist-wrp pdng-30px pdng-t-50px mil-pdng-20px">
         <div class="placelist-nav size-100 flex-row flex-algn-itms-e pdng-b-30px mil-flex-wrap">
             <div class="section size-50 mil-size-100">
                 <h1 class="pdng-b-20px">
-                    All Medical institutions in Belarus
+                    Все медицинские учреждения в Беларуси
                 </h1>
-                <div class="buttongroup">
-                    <div class="buttongroup-unit active">Show as a List</div>
-                    <div class="buttongroup-unit">Show on the Map</div>
-                </div>
+<!--                <div class="buttongroup">-->
+<!--                    <div class="buttongroup-unit active">Показать списком</div>-->
+<!--                    <div class="buttongroup-unit">Показать на карте</div>-->
+<!--                </div>-->
             </div>
             <div class="section size-50 txt-algn-r mil-notdisplay">
-                <input class="search-input" placeholder="Search">
+                <input class="search-input" placeholder="Поиск...">
             </div>
         </div>
         <div class="section border-color1 border-t-1px pdng-30px pdng-t-50px mil-pdng-t-30px mil-pdng-b-10px" style="margin:0 -30px;">
-            <div class="post-nav-wrp" style="display:none">
+            <div class="post-nav-wrp" v-show="region">
                 <div class="post-nav">
-                    <a class="header-lnk" href="#">Regions</a>
+                    <a class="header-lnk" @click="region = null; district = null">Области</a>
                     <span class="mrgn-l-10px mrgn-r-10px">
-                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 4.35C0.641015 4.35 0.35 4.64101 0.35 5C0.35 5.35899 0.641015 5.65 1 5.65L1 4.35ZM10.4596 5.45962C10.7135 5.20578 10.7135 4.79422 10.4596 4.54038L6.32304 0.403806C6.0692 0.149965 5.65764 0.149965 5.4038 0.403806C5.14996 0.657646 5.14996 1.0692 5.4038 1.32304L9.08076 5L5.4038 8.67695C5.14996 8.9308 5.14996 9.34235 5.4038 9.59619C5.65765 9.85003 6.0692 9.85003 6.32304 9.59619L10.4596 5.45962ZM1 5.65L10 5.65L10 4.35L1 4.35L1 5.65Z"
-                                  fill="#FF0000"></path>
-                            </svg>
+                            <img src="/imgs/ui/naw-arrow.svg">
+                    </span>
+                    <a class="header-lnk" href="#" @click="district = null">Брестская область</a>
+                    <template v-if="district">
+                        <span class="mrgn-l-10px mrgn-r-10px">
+                            <img src="/imgs/ui/naw-arrow.svg">
                         </span>
-                    <a class="header-lnk" href="#">Districts</a>
-                    <span class="mrgn-l-10px mrgn-r-10px">
-                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 4.35C0.641015 4.35 0.35 4.64101 0.35 5C0.35 5.35899 0.641015 5.65 1 5.65L1 4.35ZM10.4596 5.45962C10.7135 5.20578 10.7135 4.79422 10.4596 4.54038L6.32304 0.403806C6.0692 0.149965 5.65764 0.149965 5.4038 0.403806C5.14996 0.657646 5.14996 1.0692 5.4038 1.32304L9.08076 5L5.4038 8.67695C5.14996 8.9308 5.14996 9.34235 5.4038 9.59619C5.65765 9.85003 6.0692 9.85003 6.32304 9.59619L10.4596 5.45962ZM1 5.65L10 5.65L10 4.35L1 4.35L1 5.65Z"
-                                  fill="#FF0000"></path>
-                            </svg>
-                        </span>
-                    <a class="header-lnk" href="#">City Name</a>
+                        <a class="header-lnk" href="#">Барановичский район</a>
+                    </template>
                 </div>
             </div>
-            <div class="flex-row flex-wrap">
+            <div class="flex-row flex-wrap" v-show="region === null && district === null">
                 {{range $region := $.Site.Data.regions}}
                 <div class="section pdng-10px size-25 mil-size-100 mil-pdng-l-0 mil-pdng-r-0">
                     <div class="region-block">
@@ -44,7 +40,7 @@
                         </div>
                         <div class="section pdng-t-10px ">
                             <h2>
-                                <a class="txt-underline txt-underline-2px" href="#">
+                                <a class="txt-underline txt-underline-2px" @click="region = '{{$region.id}}'">
                                     <br>
                                     {{$region.label}}
                                 </a>
@@ -68,11 +64,51 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a class="button" href="#">Все районы</a>
+                            <button class="button" @click="region = '{{$region.id}}'">
+                                Все районы
+                            </button>
                         </div>
                     </div>
                 </div>
                 {{end}}
+            </div>
+            <div class="flex-row flex-wrap" v-show="region !== null && district === null">
+                {{range $key, $districts := $.Site.Data.localities}}
+                    <template v-if="region === '{{$key}}'">
+                        {{ $filtered := $districts }}
+                        {{ range $district := $filtered }}
+                        <div class="section pdng-10px size-25 mil-size-100 mil-pdng-5px">
+                            <a @click="district = '{{$district.id}}'" class="region-block link">
+                                <div class="section">
+                                    <h2>
+                                    <span class="txt-underline txt-underline-2px txt-color-1" href="#">
+                                        {{ $district.name}}
+                                    </span>
+                                    </h2>
+                                </div>
+                            </a>
+                        </div>
+                        {{end}}
+                    </template>
+                {{end}}
+            </div>
+            <div class="locality-list size-100">
+                {{range $key, $facilities := $.Site.Data.facilities}}
+                <template v-if="district === '{{$key}}'">
+                    {{ $filtered := $facilities }}
+                    <ul class="flex-row flex-wrap region-list-links">
+                        {{ range $facility := $filtered }}
+                        <li>
+                            <a href="/facility/{{$facility.healthcare_facility_key}}">
+                                <h3>
+                                    {{$facility.name}}
+                                </h3>
+                            </a>
+                        </li>
+                        {{end}}
+                    </ul>
+                </template>
+                {{ end }}
             </div>
         </div>
     </div>

@@ -1,3 +1,14 @@
+import { createApp, ref } from 'vue'
 
+const region = ref(null);
+const district = ref(null);
 
-console.log('it is works!')
+createApp({
+    setup() {
+        return {
+            region,
+            district
+        }
+    }
+}).mount('#app')
+
