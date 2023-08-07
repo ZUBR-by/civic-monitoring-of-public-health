@@ -18,14 +18,20 @@
         <div class="section border-color1 border-t-1px pdng-30px pdng-t-50px mil-pdng-t-30px mil-pdng-b-10px" style="margin:0 -30px;">
             <div class="post-nav-wrp" v-show="region">
                 <div class="post-nav">
-                    <a class="header-lnk" @click="region = null">Области</a>
+                    <a class="header-lnk" @click="region = null; district = null">Области</a>
                     <span class="mrgn-l-10px mrgn-r-10px">
-                            <img src="imgs/ui/naw-arrow.svg">
+                            <img src="/imgs/ui/naw-arrow.svg">
+                    </span>
+                    <a class="header-lnk" href="#" @click="district = null">Брестская область</a>
+                    <template v-if="district">
+                        <span class="mrgn-l-10px mrgn-r-10px">
+                            <img src="/imgs/ui/naw-arrow.svg">
                         </span>
-                    <a class="header-lnk" href="#">Брестская область</a>
+                        <a class="header-lnk" href="#">Барановичский район</a>
+                    </template>
                 </div>
             </div>
-            <div class="flex-row flex-wrap" v-show="region === null">
+            <div class="flex-row flex-wrap" v-show="region === null && district === null">
                 {{range $region := $.Site.Data.regions}}
                 <div class="section pdng-10px size-25 mil-size-100 mil-pdng-l-0 mil-pdng-r-0">
                     <div class="region-block">
@@ -66,13 +72,13 @@
                 </div>
                 {{end}}
             </div>
-            <div class="flex-row flex-wrap" v-show="region !== null">
+            <div class="flex-row flex-wrap" v-show="region !== null && district === null">
                 {{range $key, $districts := $.Site.Data.localities}}
                     <template v-if="region === '{{$key}}'">
                         {{ $filtered := $districts }}
                         {{ range $district := $filtered }}
                         <div class="section pdng-10px size-25 mil-size-100 mil-pdng-5px">
-                            <a href="#" class="region-block link">
+                            <a @click="district = '{{$district.id}}'" class="region-block link">
                                 <div class="section">
                                     <h2>
                                     <span class="txt-underline txt-underline-2px txt-color-1" href="#">
@@ -85,6 +91,24 @@
                         {{end}}
                     </template>
                 {{end}}
+            </div>
+            <div class="locality-list size-100">
+                {{range $key, $facilities := $.Site.Data.facilities}}
+                <template v-if="district === '{{$key}}'">
+                    {{ $filtered := $facilities }}
+                    <ul class="flex-row flex-wrap region-list-links">
+                        {{ range $facility := $filtered }}
+                        <li>
+                            <a href="/facility/{{$facility.healthcare_facility_key}}">
+                                <h3>
+                                    {{$facility.name}}
+                                </h3>
+                            </a>
+                        </li>
+                        {{end}}
+                    </ul>
+                </template>
+                {{ end }}
             </div>
         </div>
     </div>
