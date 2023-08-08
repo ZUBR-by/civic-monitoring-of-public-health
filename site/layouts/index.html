@@ -1,2 +1,125 @@
 {{ define "main"}}
+<div class="content pdng-30px pdng-t-140px mil-pdng-10px mil-pdng-t-100px" style="max-width:1200px;">
+    <div class="size-80 pdng-30px pdng-t-20px txt-lh-1_1em mil-size-100 mil-pdng-20px">
+        <h1 class="txt-size-34px txt-medium">
+            <span class="txt-bolder" style="color:red;">Гражданский Мониторинг Системы Здравохранения</span> &mdash;
+            некоммерческая инициатива в рамках которой граждане и медицинские работники могли бы следить за состояние здравоохранения в Республике Беларусь.
+        </h1>
+        <p class="txt-size-18px mrgn-t-30px">
+            Одной из главных целей инициативы является коллаборация гражданского общества для улучшения качества медицины и оперативного выявления негативных факторов для последующего устранения таковых факторов.
+        </p>
+        <p class="txt-size-18px mrgn-t-30px">
+            Мы верим, что совместными усилиями мы сможем значительно улучшить качество жизни каждого гражданина Беларуси.
+        </p>
+        <a class="button txt-size-15px mrgn-t-30px" href="#">
+            Присоединиться к инициативе
+            <span class="mrgn-l-5px">
+                    <img src="/imgs/ui/naw-arrow.svg">
+            </span>
+        </a>
+    </div>
+    <div class="section mrgn-t-80px">
+        <h2 class="txt-size-34px pdng-30px mil-pdng-20px">
+            Партнеры инициативы:
+        </h2>
+        <div class="flex-row flex-wrap">
+            <div class="section size-20 pdng-15px mil-size-50 mil-pdng-10px">
+                <a href="" target="_blank" class="partner-wrp height-100 flex-column pdng-20px txt-algn-c border-1px border-color1">
+                    <div class="partner-logo flex-row flex-algn-itms-c flex-grow-all pdng-t-15px pdng-b-20px">
+                        <img class="block size-100" src="/imgs/partners-logos/ehealth.PNG" alt="Okdoc">
+                    </div>
+                    <div class="partner-name txt-size-15 txt-medium">
+                        Okdoc
+                    </div>
+                    <div class="partner-description">
+                    </div>
+                </a>
+            </div>
+            <div class="section size-20 pdng-15px mil-size-50 mil-pdng-10px">
+                <a href="" target="_blank" class="partner-wrp height-100 flex-column pdng-20px txt-algn-c border-1px border-color1">
+                    <div class="partner-logo flex-row flex-algn-itms-c flex-grow-all pdng-t-15px pdng-b-20px">
+                        <img class="block size-80" src="/imgs/partners-logos/Bysol.svg" alt="Bysol">
+                    </div>
+                    <div class="partner-name txt-size-15 txt-medium">
+                        Bysol
+                    </div>
+                    <div class="partner-description">
+                    </div>
+                </a>
+            </div>
+            <div class="section size-20 pdng-15px mil-size-50 mil-pdng-10px">
+                <a href="" target="_blank" class="partner-wrp height-100 flex-column pdng-20px txt-algn-c border-1px border-color1">
+                    <div class="partner-logo flex-row flex-algn-itms-c flex-grow-all pdng-t-15px pdng-b-20px">
+                        <img class="block size-80 flex-algn-slf-strch" src="/imgs/partners-logos/bhc-logo_en.svg" alt="">
+                    </div>
+                    <div class="partner-name txt-size-15 txt-medium">
+                        Legalhub
+                    </div>
+                    <div class="partner-description">
+                    </div>
+                </a>
+            </div>
+            <div class="section size-20 pdng-15px mil-size-50 mil-pdng-10px">
+                <a href="" target="_blank" class="partner-wrp height-100 flex-column pdng-20px txt-algn-c border-1px border-color1">
+                    <div class="partner-logo flex-row flex-algn-itms-c flex-grow-all pdng-t-15px pdng-b-20px">
+                        <img class="block size-80 flex-algn-slf-strch" src="/imgs/partners-logos/bhc-logo_en.svg" alt="">
+                    </div>
+                    <div class="partner-name txt-size-15 txt-medium">
+                        Freebelarus
+                    </div>
+                    <div class="partner-description">
+                    </div>
+                </a>
+            </div>
+            <div class="section size-20 pdng-15px mil-size-50 mil-pdng-10px">
+                <a href="" target="_blank" class="partner-wrp height-100 flex-column pdng-20px txt-algn-c border-1px border-color1">
+                    <div class="partner-logo flex-row flex-algn-itms-c flex-grow-all pdng-t-15px pdng-b-20px">
+                        <img class=" block size-60" src="/imgs/partners-logos/nb.jpg" alt="Newbelarus">
+                    </div>
+                    <div class="partner-name txt-size-15 txt-medium">
+                        Newbelarus
+                    </div>
+                    <div class="partner-description">
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="section mrgn-t-80px">
+        <h2 class="txt-size-34px pdng-30px mil-pdng-20px">
+            Последние отчеты:
+        </h2>
+        <div class="post-list-wrp flex-row flex-wrap">
+            {{$pages := where .Site.Pages "Section" "post"}}
+            {{$pages := where $pages ".Draft" false}}
+            {{$pages := where $pages ".IsPage" true}}
+            {{ range $pages}}
+            <div class="section size-33_3 pdng-15px mil-size-100 mil-pdng-10px mil-pdng-b-20px">
+                <div class="post-wrp pdng-30px pdng-t-40px mil-flex-column">
+                    <div class="post-content">
+                        <a href="{{.Permalink}}">
+                            <h2 class="post-header-link txt-size-32px mil-txt-size-26px">
+                                {{.Title}}
+                            </h2>
+                        </a>
+                        <p class="mrgn-t-20px">
+                            {{.Summary}}
+                        </p>
+                        <a class="button txt-size-18px mrgn-t-20px" href="{{.Permalink}}">
+                            Read more
+                            <span class="mrgn-l-5px">
+                            <img src="/imgs/ui/naw-arrow.svg">
+                        </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+
+        </div>
+    </div>
+
+</div>
+
 {{ end }}
