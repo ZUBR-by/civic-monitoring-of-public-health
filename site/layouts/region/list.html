@@ -1,0 +1,90 @@
+{{ define "main"}}
+<div class="content pdng-30px pdng-t-140px mil-pdng-10px mil-pdng-t-100px" id="app">
+    <div class="placelist-wrp pdng-30px pdng-t-50px mil-pdng-20px">
+        <div class="placelist-nav size-100 flex-row flex-algn-itms-e pdng-b-30px mil-flex-wrap">
+            <div class="section size-50 mil-size-100">
+                <h1 class="pdng-b-20px">
+                    Все медицинские учреждения в Беларуси
+                </h1>
+<!--                <div class="buttongroup">-->
+<!--                    <div class="buttongroup-unit active">Показать списком</div>-->
+<!--                    <div class="buttongroup-unit">Показать на карте</div>-->
+<!--                </div>-->
+            </div>
+            <div class="section size-50 txt-algn-r mil-notdisplay">
+                <input class="search-input" placeholder="Поиск...">
+            </div>
+        </div>
+        <div class="section border-color1 border-t-1px pdng-30px pdng-t-50px mil-pdng-t-30px mil-pdng-b-10px" style="margin:0 -30px;">
+            <div class="flex-row flex-wrap" v-show="region === null && district === null">
+                {{range $region_id, $region_label := $.Site.Data.regions}}
+                <div class="section pdng-10px size-25 mil-size-100 mil-pdng-l-0 mil-pdng-r-0">
+                    <div class="region-block">
+                        <div class="section">
+                            <img class="region-emblem" src="/imgs/emblems/regions/{{$region_id}}.svg" alt="{{$region_label}}">
+                        </div>
+                        <div class="section pdng-t-10px ">
+                            <h2>
+                                <a class="txt-underline txt-underline-2px" href="/region/{{$region_id}}">
+                                    <br>
+                                    {{$region_label }}
+                                </a>
+                            </h2>
+                            <div class="section pdng-t-20px pdng-b-10px">
+                                <ul class="region-list-links">
+                                    <li>
+                                        <a href="#">Центральный район</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Советский район</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Первомайский район</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Партизанский район</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Заводской район</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a class="button" href="/region/{{$region_id}}">
+                                Все районы
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{end}}
+            </div>
+            <div class="flex-row flex-wrap" v-show="region !== null && district === null">
+                {{range $key, $districts := $.Site.Data.localities}}
+                    <template v-if="region === '{{$key}}'">
+                        {{ $filtered := $districts }}
+                        {{ range $district := $filtered }}
+                        <div class="section pdng-10px size-25 mil-size-100 mil-pdng-5px">
+                            <a href="/district/{{$district.id}}" class="region-block link">
+                                <div class="section">
+                                    <h2>
+                                    <span class="txt-underline txt-underline-2px txt-color-1" href="#">
+                                        {{ $district.name}}
+                                    </span>
+                                    </h2>
+                                </div>
+                            </a>
+                        </div>
+                        {{end}}
+                    </template>
+                {{end}}
+            </div>
+    </div>
+</div>
+{{end}}
+
+{{ define "assets"}}
+<script>
+    var regions = {{ $.Site.Data.regions | jsonify  | safeJS}};
+</script>
+{{ .Scratch.Set "entry" "facility_list" }}
+{{ partial "assets" . }}
+{{end}}

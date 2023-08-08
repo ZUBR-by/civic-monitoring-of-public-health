@@ -5,44 +5,30 @@
             <div class="section pdng-t-80px pdng-r-30px pdng-b-50px pdng-l-50px size-50 mil-size-100 mil-pdng-30px mil-pdng-t-100px">
                 <div class="post-nav-wrp">
                     <div class="post-nav">
-                        <a class="header-lnk" href="#">Мед. учреждения</a>
+                        <a class="header-lnk" href="/region/">Мед. учреждения</a>
                         <span class="mrgn-l-10px mrgn-r-10px">
                                 <img src="/imgs/ui/naw-arrow.svg">
-                             </span>
-                        <a class="header-lnk" href="#">Брестская область</a>
+                        </span>
+                        {{$regionId := slicestr (.Param "district_id") 0 1}}
+                        <a class="header-lnk" href='/region/{{$regionId}}'>
+                            {{index $.Site.Data.regions $regionId }}
+                        </a>
                         <span class="mrgn-l-10px mrgn-r-10px">
-                                <img src="/imgs/ui/naw-arrow.svg">
-                            </span>
-                        <a class="header-lnk" href="#">Барановичский район</a>
-                        <span class="mrgn-l-10px mrgn-r-10px">
-                                <img src="/imgs/ui/naw-arrow.svg">
-                            </span>
-                        <a class="header-lnk" href="#">Барановичи</a>
+                            <img src="/imgs/ui/naw-arrow.svg">
+                        </span>
+                        <a class="header-lnk" href='/district/{{.Param "district_id"}}'>
+                            Барановичский район
+                        </a>
                     </div>
                 </div>
-
                 <h1 class="">
-                    Поликлиника №20
+                    {{ .Param "facility_name" }}
                 </h1>
                 <div class="mrgn-t-30px txt-size-15px">
                     <div class="infoblock">
                         <div class="infoblock-name">Адрес:</div>
                         <div class="infoblock-value">
-                            220074, Республика Беларусь, г. Минск, пр. Пушкина 16
-                        </div>
-                    </div>
-                    <div class="infoblock">
-                        <div class="infoblock-name">Почтовый адрес:</div>
-                        <div class="infoblock-value">
-                            220074, Республика Беларусь, г. Минск, пр. Пушкина 16
-                        </div>
-                    </div>
-                    <div class="infoblock">
-                        <div class="infoblock-name">
-                            Телефон:
-                        </div>
-                        <div class="infoblock-value">
-                            +375 17 369-03-33
+                            {{ .Param "facility_address" }}
                         </div>
                     </div>
                     <div class="infoblock">
@@ -50,8 +36,8 @@
                             Сайт:
                         </div>
                         <div class="infoblock-value">
-                            <a class="txt-underline-inline" href="#">
-                                https://20gp.by
+                            <a class="txt-underline-inline" href='{{ .Param "facility_url" }}'>
+                                {{ .Param "facility_url" }}
                             </a>
                         </div>
                     </div>
@@ -62,7 +48,9 @@
                     <a href="https://yandex.by/maps/157/minsk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">
                         Минск
                     </a>
-                    <a href="https://yandex.by/maps/157/minsk/?ll=27.555691%2C53.902735&utm_medium=mapframe&utm_source=maps&z=12" style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс Карты — транспорт, навигация, поиск мест</a><iframe src="https://yandex.by/map-widget/v1/?ll=27.555691%2C53.902735&z=12" width="100%" height="100%" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+                    <a href="https://yandex.by/maps/157/minsk/?ll=27.555691%2C53.902735&utm_medium=mapframe&utm_source=maps&z=12" style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс Карты — транспорт, навигация, поиск мест</a>
+                    <iframe src="https://yandex.by/map-widget/v1/?ll=27.555691%2C53.902735&z=12" width="100%" height="100%" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+                </div>
             </div>
         </div>
 

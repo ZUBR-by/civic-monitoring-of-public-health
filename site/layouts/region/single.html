@@ -1,0 +1,48 @@
+{{ define "main"}}
+<div class="content pdng-30px pdng-t-140px mil-pdng-10px mil-pdng-t-100px" id="app">
+    <div class="placelist-wrp pdng-30px pdng-t-50px mil-pdng-20px">
+        <div class="placelist-nav size-100 flex-row flex-algn-itms-e pdng-b-30px mil-flex-wrap">
+            <div class="section size-50 mil-size-100">
+                <h1 class="pdng-b-20px">
+                    Все медицинские учреждения в Беларуси
+                </h1>
+                <!--                <div class="buttongroup">-->
+                <!--                    <div class="buttongroup-unit active">Показать списком</div>-->
+                <!--                    <div class="buttongroup-unit">Показать на карте</div>-->
+                <!--                </div>-->
+            </div>
+            <div class="section size-50 txt-algn-r mil-notdisplay">
+                <input class="search-input" placeholder="Поиск...">
+            </div>
+        </div>
+        <div class="section border-color1 border-t-1px pdng-30px pdng-t-50px mil-pdng-t-30px mil-pdng-b-10px" style="margin:0 -30px;">
+            <div class="post-nav-wrp" v-show="region">
+                <div class="post-nav">
+                    <a class="header-lnk" href="/region/">Области</a>
+                    <span class="mrgn-l-10px mrgn-r-10px">
+                        <img src="/imgs/ui/naw-arrow.svg">
+                    </span>
+                    <a class="header-lnk" href="#">Брестская область</a>
+                </div>
+            </div>
+            <div class="flex-row flex-wrap">
+                {{ $districts := index $.Site.Data.localities (.Param "region_id") }}
+                {{ range $district := $districts }}
+                <div class="section pdng-10px size-25 mil-size-100 mil-pdng-5px">
+                    <a href="/district/{{$district.id}}" class="region-block link">
+                        <div class="section">
+                            <h2>
+                                <span class="txt-underline txt-underline-2px txt-color-1">
+                                    {{ $district.name}}
+                                </span>
+                            </h2>
+                        </div>
+                    </a>
+                </div>
+                {{end}}
+            </div>
+        </div>
+    </div>
+</div>
+{{end}}
+
