@@ -3,17 +3,39 @@
     <div class="post-wrp pdng-50px pdng-t-100px mil-pdng-20px mil-pdng-t-80px mil-flex-column">
         <div class="post-nav-wrp">
             <div class="post-nav">
-                <a class="header-lnk" href="#">Investigations</a>
-                <span class="mrgn-l-10px mrgn-r-10px">
-                        <img src="/imgs/ui/naw-arrow.svg">
-                    </span>
-                <a class="header-lnk" href="#">Investigations Category</a>
-
+                <a class="header-lnk" href="/post/">Отчеты</a>
+            </div>
+        </div>
+        <div class="post-additions">
+            <div class="section pdng-t-40px pdng-r-30px pdng-l-30px pdng-b-30px">
+                <h2 class="txt-size-26px mil-txt-size-24px">
+                    Файлы:
+                </h2>
+            </div>
+            <div class="section pdng-t-30px pdng-r-20px pdng-l-20px pdng-b-30px">
+                {{ range $resource := .Resources}}
+                <a class="file-unit flex-row flex-algn-itms-c"
+                   target="_blank"
+                   rel="noopener"
+                   href="{{$resource.Permalink}}">
+                    <div class="section">
+                        <img class="block" style="width:32px;" src="/imgs/file.png" alt="">
+                    </div>
+                    <div class="section pdng-l-10px">
+                        <h3>
+                            {{ $resource.Name}}
+                        </h3>
+                        <!--                        <div class="txt-color-2">-->
+                        <!--                            3.2 MB-->
+                        <!--                        </div>-->
+                    </div>
+                </a>
+                {{end}}
             </div>
         </div>
         <div class="post-content">
             <h1 class="txt-size-32px mil-txt-size-26px">
-                Репрессии в отношении медицинских работников
+                Репрессии в отношении медицинских работников. Данные Фонда Медициниской Солидарности, Белых Халатов и ZUBR.in
             </h1>
             <p class="mrgn-t-50px">
                 Мы ведем учет репрессий в отношении медицинских работников с августа 2020 года. За это время нам удалось собрать информацию о 248 медработниках, подвергшихся задержанию и лишению свободы. Это далеко не полные данные, но даже по ним можно сказать, что в стране персонал очень большой клиники успел побывать в тюрьмах и РОВД. Для сравнения, во всем Слуцком районе на 01.01.2023 насчитывается всего 276 врачей.
@@ -39,6 +61,9 @@
             </p>
             <p class="mrgn-t-20px">
                 Самой “криминальной” оказалась профессия анестезиолога-реаниматолога - 31 задержанный имел такую специальность, также 17 хирургов, 22 медицинских сестры, 14 фельдшеров, “всего” 9 травматологов, а также урологи, онкологи, неврологи и представители специальностей, которых в Беларуси насчитывались буквально единицы; в 13 случаях специализация осталась неизвестной.
+            </p>
+            <p class="mrgn-t-20px">
+                Интересно отметить, что в 2023 г. анестезиологи - оказались самыми востребованными узкими специалистами в учреждениях здравоохранения. Согласно <a href="https://gsmu.by/upload/file/raspredelenie/potrebnost/2023/org_mz.pdf&sa=D&source=docs&ust=1691587327105443&usg=AOvVaw21bsMY810Cf-FSPie8MPkb">запросам на распределение</a> в медицинские вузы только для молодых специалистов открыто 375 вакансий этого профиля.
             </p>
             <p class="mrgn-t-20px">
                 Если предположить, что среди задержанных в целом по стране распределение врачей такое же как в среднем по популяции, а по данным Минздрава в Беларуси 52 - 55,2 врача на 10 000 населения, получается на 212 врачей (248 - 22 медсестры - 14 фельдшеров) было задержано около 40769 человек в общей популяции.

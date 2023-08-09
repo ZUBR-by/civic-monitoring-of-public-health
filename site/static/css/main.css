@@ -233,6 +233,13 @@ input#brgrbtn:checked + label + .brgr-nav {
   box-shadow:rgba(0,0,0,0.2) 0 5px 40px;
   z-index:1;
 }
+.partner-logo {
+}
+.partner-logo img {
+  margin: 0 auto;
+}
+
+
 
 h1, a, .button, .txt-color-1 {
   color:#ff0000;
