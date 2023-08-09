@@ -4,7 +4,7 @@
         <div class="placelist-nav size-100 flex-row flex-algn-itms-e pdng-b-30px mil-flex-wrap">
             <div class="section size-50 mil-size-100">
                 <h1 class="pdng-b-20px">
-                    Все медицинские учреждения в Беларуси
+                    Медицинские учреждения
                 </h1>
 <!--                <div class="buttongroup">-->
 <!--                    <div class="buttongroup-unit active">Показать списком</div>-->
@@ -32,21 +32,13 @@
                             </h2>
                             <div class="section pdng-t-20px pdng-b-10px">
                                 <ul class="region-list-links">
+                                    {{ $districts := index $.Site.Data.localities $region_id }}
+
+                                    {{ range $district := first 6 $districts }}
                                     <li>
-                                        <a href="#">Центральный район</a>
+                                        <a href="/district/{{$district.id}}">{{$district.name}}</a>
                                     </li>
-                                    <li>
-                                        <a href="#">Советский район</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Первомайский район</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Партизанский район</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Заводской район</a>
-                                    </li>
+                                    {{end}}
                                 </ul>
                             </div>
                             <a class="button" href="/region/{{$region_id}}">
