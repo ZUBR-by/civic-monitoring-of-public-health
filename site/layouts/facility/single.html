@@ -21,10 +21,16 @@
                         </a>
                     </div>
                 </div>
-                <h1 class="">
+                <h1>
                     {{ .Param "facility_name" }}
                 </h1>
                 <div class="mrgn-t-30px txt-size-15px">
+                    <div class="infoblock">
+                        <div class="infoblock-name">Населенный пункт:</div>
+                        <div class="infoblock-value">
+                            {{ .Param "place_name" }}
+                        </div>
+                    </div>
                     <div class="infoblock">
                         <div class="infoblock-name">Адрес:</div>
                         <div class="infoblock-value">
