@@ -16,7 +16,8 @@ export default defineConfig({
         manifest     : true,
         rollupOptions: {
             input: [
-                'src/facility_list.js'
+                'src/facility_list.js',
+                'src/facility.js',
             ]
         },
         outDir       : './../assets/generated'
