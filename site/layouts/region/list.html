@@ -1,21 +1,21 @@
 {{ define "main"}}
-<div class="content pdng-30px pdng-t-140px mil-pdng-10px mil-pdng-t-100px" id="app">
-    <div class="placelist-wrp pdng-30px pdng-t-50px mil-pdng-20px">
+<div class="content pdng-30px pdng-t-140px mil-pdng-10px mil-pdng-t-100px" >
+    <div class="placelist-wrp pdng-30px pdng-t-50px mil-pdng-20px" id="app">
         <div class="placelist-nav size-100 flex-row flex-algn-itms-e pdng-b-30px mil-flex-wrap">
             <div class="section size-50 mil-size-100">
                 <h1 class="pdng-b-20px">
                     Медицинские учреждения
                 </h1>
-<!--                <div class="buttongroup">-->
-<!--                    <div class="buttongroup-unit active">Показать списком</div>-->
-<!--                    <div class="buttongroup-unit">Показать на карте</div>-->
-<!--                </div>-->
+                <div class="buttongroup">
+                    <button class="buttongroup-unit" :class="{'active': view === 'list'}" @click="view = 'list'">Список</button>
+                    <button class="buttongroup-unit" :class="{'active': view === 'map'}" @click="enableMap">Карта</button>
+                </div>
             </div>
-            <div class="section size-50 txt-algn-r mil-notdisplay">
-                <input class="search-input" placeholder="Поиск...">
-            </div>
+<!--            <div class="section size-50 txt-algn-r mil-notdisplay">-->
+<!--                <input class="search-input" placeholder="Поиск...">-->
+<!--            </div>-->
         </div>
-        <div class="section border-color1 border-t-1px pdng-30px pdng-t-50px mil-pdng-t-30px mil-pdng-b-10px" style="margin:0 -30px;">
+        <div v-show="view === 'list'" class="section border-color1 border-t-1px pdng-30px pdng-t-50px mil-pdng-t-30px mil-pdng-b-10px" style="margin:0 -30px;" >
             <div class="flex-row flex-wrap" v-show="region === null && district === null">
                 {{range $region_id, $region_label := $.Site.Data.regions}}
                 <div class="section pdng-10px size-25 mil-size-100 mil-pdng-l-0 mil-pdng-r-0">
@@ -69,13 +69,21 @@
                     </template>
                 {{end}}
             </div>
+        </div>
+        <div v-show="view === 'map'" class="placelist-content">
+            <div class="placeview-map-wrp" style="position:relative;overflow:hidden; border-radius:20px;height: 600px">
+                <div id="facility-location" style="width: 100%;height: 100%;"></div>
+            </div>
+        </div>
     </div>
 </div>
+
 {{end}}
 
 {{ define "assets"}}
 <script>
     var regions = {{ $.Site.Data.regions | jsonify  | safeJS}};
+    var features = {{ $.Site.Data.features | jsonify  | safeJS}};
 </script>
 {{ .Scratch.Set "entry" "facility_list" }}
 {{ partial "assets" . }}
