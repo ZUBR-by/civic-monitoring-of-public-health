@@ -46,67 +46,23 @@
             Партнеры инициативы:
         </h2>
         <div class="flex-row flex-wrap">
+            {{range $partner := .Site.Data.partners }}
             <div class="section size-20 pdng-15px mil-size-50 mil-pdng-10px">
-                <a href="https://okdoc.me/" target="_blank" class="partner-wrp height-100 flex-column pdng-20px txt-algn-c border-1px border-color1">
+                <a href="{{$partner.url}}"
+                   target="_blank"
+                   rel="noopener"
+                   class="partner-wrp height-100 flex-column pdng-20px txt-algn-c border-1px border-color1">
                     <div class="partner-logo flex-row flex-algn-itms-c flex-grow-all pdng-t-15px pdng-b-20px">
-                        <img class="block size-100" src="/imgs/partners-logos/ehealth.PNG" alt="Okdoc">
+                        <img class="block size-100" src="/imgs/partners-logos/{{$partner.img}}" alt="{{$partner.name}}">
                     </div>
                     <div class="partner-name txt-size-15 txt-medium">
-                        Okdoc
+                        {{$partner.name}}
                     </div>
                     <div class="partner-description">
                     </div>
                 </a>
             </div>
-            <div class="section size-20 pdng-15px mil-size-50 mil-pdng-10px">
-                <a href="https://www.bysol.org/" target="_blank" class="partner-wrp height-100 flex-column pdng-20px txt-algn-c border-1px border-color1">
-                    <div class="partner-logo flex-row flex-algn-itms-c flex-grow-all pdng-t-15px pdng-b-20px">
-                        <img class="block size-80" src="/imgs/partners-logos/Bysol.svg" alt="Bysol">
-                    </div>
-                    <div class="partner-name txt-size-15 txt-medium">
-                        Bysol
-                    </div>
-                    <div class="partner-description">
-                    </div>
-                </a>
-            </div>
-
-            <div class="section size-20 pdng-15px mil-size-50 mil-pdng-10px">
-                <a href="https://freebelarus.center/" target="_blank" class="partner-wrp height-100 flex-column pdng-20px txt-algn-c border-1px border-color1">
-                    <div class="partner-logo flex-row flex-algn-itms-c flex-grow-all pdng-t-15px pdng-b-20px">
-                        <img class="block size-80 flex-algn-slf-strch" src="/imgs/partners-logos/fbc.png" alt="">
-                    </div>
-                    <div class="partner-name txt-size-15 txt-medium">
-                        FreeBelarusCenter
-                    </div>
-                    <div class="partner-description">
-                    </div>
-                </a>
-            </div>
-            <div class="section size-20 pdng-15px mil-size-50 mil-pdng-10px">
-                <a href="https://newbelarus.com/" target="_blank" class="partner-wrp height-100 flex-column pdng-20px txt-algn-c border-1px border-color1">
-                    <div class="partner-logo flex-row flex-algn-itms-c flex-grow-all pdng-t-15px pdng-b-20px">
-                        <img class=" block size-60" src="/imgs/partners-logos/nb.jpg" alt="Newbelarus">
-                    </div>
-                    <div class="partner-name txt-size-15 txt-medium">
-                        Newbelarus
-                    </div>
-                    <div class="partner-description">
-                    </div>
-                </a>
-            </div>
-            <div class="section size-20 pdng-15px mil-size-50 mil-pdng-10px">
-                <a href="https://zubr.in/" target="_blank" class="partner-wrp height-100 flex-column pdng-20px txt-algn-c border-1px border-color1">
-                    <div class="partner-logo flex-row flex-algn-itms-c flex-grow-all pdng-t-15px pdng-b-20px">
-                        <img class=" block size-60" src="/imgs/partners-logos/zubr_in.png" alt="ZUBR.in">
-                    </div>
-                    <div class="partner-name txt-size-15 txt-medium">
-                        ZUBR.in
-                    </div>
-                    <div class="partner-description">
-                    </div>
-                </a>
-            </div>
+            {{end}}
         </div>
     </div>
 
