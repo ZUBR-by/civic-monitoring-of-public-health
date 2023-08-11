@@ -55,105 +55,32 @@
                 </div>
             </div>
         </div>
-
+        {{ if gt (.Param "devices" | len) 0}}
         <div class="placeview-info mrgn-t-30px pdng-50px mil-pdng-30px">
             <h3>
-                Наличие медицинского оборудования и услуг
+                Наличие медицинского оборудования
             </h3>
             <div class="flex-row flex-wrap pdng-t-30px">
+                {{ range $device := .Param "devices"}}
                 <div class="inline-flex flex-algn-itms-c size-20 pdng-10px mil-size-50">
                     <div class="section pdng-r-10px">
-                        <img class="block" width="32px" src="/imgs/mrt.png" alt="">
+                        <img class="block" width="32px"
+                             src="/imgs/mrt.png"
+                             alt="{{$device.equipment_type}} {{$device.manufacturer}} {{$device.model}}">
                     </div>
                     <div class="section txt-size-12px">
                         <div>
-                            Наличие аппаратов МРТ
+                            {{$device.equipment_type}}
                         </div>
                         <div class="txt-bold">
-                            Нет
+                            {{$device.manufacturer}} {{$device.model}}
                         </div>
                     </div>
                 </div>
-                <div class="inline-flex flex-algn-itms-c size-20 pdng-10px mil-size-50">
-                    <div class="section pdng-r-10px">
-                        <img class="block" width="32px" src="/imgs/x-ray.png" alt="">
-                    </div>
-                    <div class="section txt-size-12px">
-                        <div>
-                            Наличие рентгена
-                        </div>
-                        <div class="txt-bold">
-                            Нет
-                        </div>
-                    </div>
-                </div>
-                <div class="inline-flex flex-algn-itms-c size-20 pdng-10px mil-size-50">
-                    <div class="section pdng-r-10px">
-                        <img class="block" width="32px" src="/imgs/ekg.png" alt="">
-                    </div>
-                    <div class="section txt-size-12px">
-                        <div>
-                            Наличие аппаратов ЭКГ
-                        </div>
-                        <div class="txt-bold">
-                            Нет
-                        </div>
-                    </div>
-                </div>
-                <div class="inline-flex flex-algn-itms-c size-20 pdng-10px mil-size-50">
-                    <div class="section pdng-r-10px">
-                        <img class="block" width="32px" src="/imgs/stuff.png" alt="">
-                    </div>
-                    <div class="section txt-size-12px">
-                        <div>
-                            Наличие расходных материалов
-                        </div>
-                        <div class="txt-bold">
-                            Нет
-                        </div>
-                    </div>
-                </div>
-                <div class="inline-flex flex-algn-itms-c size-20 pdng-10px mil-size-50">
-                    <div class="section pdng-r-10px">
-                        <img class="block" width="32px" src="/imgs/hospital-bed.png" alt="">
-                    </div>
-                    <div class="section txt-size-12px">
-                        <div>
-                            Наличие палат
-                        </div>
-                        <div class="txt-bold">
-                            Нет
-                        </div>
-                    </div>
-                </div>
-                <div class="inline-flex flex-algn-itms-c size-20 pdng-10px mil-size-50">
-                    <div class="section pdng-r-10px">
-                        <img class="block" width="32px" src="/imgs/virus.png" alt="">
-                    </div>
-                    <div class="section txt-size-12px">
-                        <div>
-                            Наличие противовирусных препаратов
-                        </div>
-                        <div class="txt-bold">
-                            Нет
-                        </div>
-                    </div>
-                </div>
-                <div class="inline-flex flex-algn-itms-c size-20 pdng-10px mil-size-50">
-                    <div class="section pdng-r-10px">
-                        <img class="block" width="32px" src="/imgs/pills.png" alt="">
-                    </div>
-                    <div class="section txt-size-12px">
-                        <div>
-                            Наличие препаратов
-                        </div>
-                        <div class="txt-bold">
-                            Нет
-                        </div>
-                    </div>
-                </div>
+                {{end}}
             </div>
         </div>
+        {{end}}
     </div>
 </div>
 <script>
