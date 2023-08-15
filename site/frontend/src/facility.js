@@ -9,6 +9,7 @@ import Point             from 'ol/geom/Point'
 import VectorLayer       from 'ol/layer/Vector';
 import VectorSource      from 'ol/source/Vector';
 import {Icon, Style}     from 'ol/style';
+import {Zoom}            from "ol/control";
 
 if (facilityLocation) {
     setTimeout(() => {
@@ -17,6 +18,8 @@ if (facilityLocation) {
                 new TileLayer({
                     source: new OSM(),
                 })],
+            interactions: [],
+            controls    : [new Zoom()],
             target: 'facility-location',
             view  : new View({
                 center: fromLonLat(facilityLocation.coordinates),
