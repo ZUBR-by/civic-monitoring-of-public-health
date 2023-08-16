@@ -175,6 +175,9 @@ onMounted(() => {
                     if (f.features.length === 0) {
                         return;
                     }
+                    if (f.features.length > 8) {
+                        return;
+                    }
                     featureList.value = f.features.map(t => ({
                         id: t.getProperties().id,
                         name: t.getProperties().name,
