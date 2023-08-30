@@ -222,6 +222,9 @@ input#brgrbtn:checked + label + .brgr-nav {
   display:inline;
   border-bottom:rgba(255,0, 0,0.5) 2px solid;
 }
+.post-content.post-markdown p {
+  margin-top: 20px;
+}
 
 .partner-wrp {
   background:#fff;
@@ -282,6 +285,22 @@ h4 {
 p {
   font-size:16px;
   line-height:1.4em;
+}
+blockquote{
+  font-size:15px;
+  font-weight:400;
+  line-height:1.4em;
+  font-style:italic;
+  padding:0 0 0 20px;
+}
+blockquote:after {
+  content:'';
+  position:absolute;
+  left:0;
+  top:0;
+  width:5px;
+  height:100%;
+  background:#ff0000;
 }
 p.quote {
   font-size:15px;

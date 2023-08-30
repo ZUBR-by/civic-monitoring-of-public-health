@@ -4,14 +4,42 @@
     <div class="post-wrp pdng-50px pdng-t-100px mil-pdng-20px mil-pdng-t-80px mil-flex-column">
         <div class="post-nav-wrp">
             <div class="post-nav">
-                <a class="header-lnk" href="#">Investigations</a>
-                <span class="mrgn-l-10px mrgn-r-10px">
-                    <img src="/imgs/ui/naw-arrow.svg">
-                </span>
-                <a class="header-lnk" href="#">Investigations Category</a>
+                <a class="header-lnk" href="/post/">Отчеты</a>
             </div>
         </div>
-        {{ .Content }}
+        <div class="post-additions">
+            <div class="section pdng-t-40px pdng-r-30px pdng-l-30px pdng-b-30px">
+                <h2 class="txt-size-26px mil-txt-size-24px">
+                    Файлы:
+                </h2>
+            </div>
+            <div class="section pdng-t-30px pdng-r-20px pdng-l-20px pdng-b-30px">
+                {{ range $resource := .Resources}}
+                <a class="file-unit flex-row flex-algn-itms-c"
+                   target="_blank"
+                   rel="noopener"
+                   href="{{$resource.Permalink}}">
+                    <div class="section">
+                        <img class="block" style="width:32px;" src="/imgs/file.png" alt="">
+                    </div>
+                    <div class="section pdng-l-10px">
+                        <h3>
+                            {{ $resource.Name}}
+                        </h3>
+                        <!--                        <div class="txt-color-2">-->
+                        <!--                            3.2 MB-->
+                        <!--                        </div>-->
+                    </div>
+                </a>
+                {{end}}
+            </div>
+        </div>
+        <div class="post-content post-markdown">
+            <h1 class="txt-size-32px mil-txt-size-26px">
+                {{.Title}}
+            </h1>
+            {{ .Content }}
+        </div>
     </div>
 </div>
 
