@@ -1,0 +1,16 @@
+{{ $arg := .Get 0 }}
+{{ $dataFile := getCSV "," $arg }}
+{{ $.Scratch.Set "count" 0 }}
+
+<table>
+
+    {{ range $i, $r := $dataFile  }}
+    <tr>
+        <td>{{ index $r 0 | markdownify }}</td>
+        <td>{{ index $r 1 | markdownify }}</td>
+        <td>{{ index $r 2 | markdownify }}</td>
+        <td>{{ index $r 3 | markdownify }}</td>
+    </tr>
+    {{ end }}
+
+</table>
