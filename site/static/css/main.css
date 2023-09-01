@@ -226,6 +226,28 @@ input#brgrbtn:checked + label + .brgr-nav {
   margin-top: 20px;
 }
 
+.post-content.post-markdown figure {
+  margin-top: 20px;
+}
+
+.post-content.post-markdown ol {
+  margin-top: 20px;
+}
+.post-content.post-markdown ul {
+  margin-top: 20px;
+}
+
+.post-content.post-markdown h3 {
+  margin-top: 50px;
+}
+.post-content.post-markdown h4 {
+  margin-top: 20px;
+  font-weight:500;
+}
+.post-content.post-markdown h1 {
+  margin-bottom: 50px;
+}
+
 .partner-wrp {
   background:#fff;
   border-radius:30px;

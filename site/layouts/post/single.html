@@ -15,6 +15,7 @@
             </div>
             <div class="section pdng-t-30px pdng-r-20px pdng-l-20px pdng-b-30px">
                 {{ range $resource := .Resources}}
+                {{ if ne .MediaType.Type "text/csv" }}
                 <a class="file-unit flex-row flex-algn-itms-c"
                    target="_blank"
                    rel="noopener"
@@ -31,6 +32,7 @@
                         <!--                        </div>-->
                     </div>
                 </a>
+                {{end}}
                 {{end}}
             </div>
         </div>

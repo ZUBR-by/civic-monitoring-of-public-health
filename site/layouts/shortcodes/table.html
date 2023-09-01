@@ -1,16 +1,23 @@
-{{ $arg := .Get 0 }}
-{{ $dataFile := getCSV "," $arg }}
-{{ $.Scratch.Set "count" 0 }}
-
-<table>
-
-    {{ range $i, $r := $dataFile  }}
-    <tr>
-        <td>{{ index $r 0 | markdownify }}</td>
-        <td>{{ index $r 1 | markdownify }}</td>
-        <td>{{ index $r 2 | markdownify }}</td>
-        <td>{{ index $r 3 | markdownify }}</td>
-    </tr>
-    {{ end }}
-
-</table>
+{{ $src := .Get "src" }}
+{{ $caption := .Get "caption" }}
+{{ $dataFile := getCSV "," $src }}
+<div class="table-wrapper">
+    <p class="txt-size-12px txt-italic pdng-b-15px">
+        {{$caption}}
+    </p>
+    <table>
+        {{ range $i, $r := $dataFile }}
+        {{if eq $i 0}}
+        <thead>
+        {{end}}
+        <tr>
+            {{range $element := $r}}
+            <td>{{ $element | markdownify }}</td>
+            {{end}}
+        </tr>
+        {{if eq $i 0}}
+        </thead>
+        {{end}}
+        {{end}}
+    </table>
+</div>
