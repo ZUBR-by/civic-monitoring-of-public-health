@@ -1,9 +1,10 @@
 {{ $src := .Get "src" }}
 {{ $caption := .Get "caption" }}
+{{ $notes := .Get "notes" }}
 {{ $dataFile := getCSV "," $src }}
 <div class="table-wrapper">
     <p class="txt-size-12px txt-italic pdng-b-15px">
-        {{$caption}}
+        {{$caption | markdownify}}
     </p>
     <table>
         {{ range $i, $r := $dataFile }}
@@ -20,4 +21,7 @@
         {{end}}
         {{end}}
     </table>
+    <p class="txt-size-12px mrgn-t-10px">
+        {{$notes}}
+    </p>
 </div>
