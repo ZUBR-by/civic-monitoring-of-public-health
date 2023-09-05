@@ -240,6 +240,11 @@ input#brgrbtn:checked + label + .brgr-nav {
 .post-content.post-markdown h3 {
   margin-top: 50px;
 }
+
+.post-content.post-markdown h2 {
+  margin-top: 50px;
+}
+
 .post-content.post-markdown h4 {
   margin-top: 20px;
   font-weight:500;
