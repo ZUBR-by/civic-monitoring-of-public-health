@@ -26,6 +26,12 @@
                 </h1>
                 <div class="mrgn-t-30px txt-size-15px">
                     <div class="infoblock">
+                        <div class="infoblock-name">Номер:</div>
+                        <div class="infoblock-value">
+                            {{ .Param "facility_id" }}
+                        </div>
+                    </div>
+                    <div class="infoblock">
                         <div class="infoblock-name">Населенный пункт:</div>
                         <div class="infoblock-value">
                             {{ .Param "place_name" }}
@@ -46,6 +52,17 @@
                                 {{ .Param "facility_url" }}
                             </a>
                         </div>
+                    </div>
+                    <div class="infoblock">
+                        {{$facilityName := printf "%s, %s" (.Param "place_name")  (.Param "facility_name") }}
+                        {{$formUrl := replace (.Param "form_url") ":facility_name" $facilityName}}
+                        {{$formUrl := replace $formUrl ":facility_id" (.Param "facility_id")}}
+                        <a class="button txt-size-18px mrgn-t-20px" target="_blank" href='{{$formUrl}}'>
+                            Сообщить о проблеме
+                            <span class="mrgn-l-5px">
+                                <img src="/imgs/ui/naw-arrow.svg">
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
