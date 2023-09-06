@@ -159,15 +159,3 @@ draft: false
    опубликованной в “Статистическом ежегоднике Республики Беларусь” за 2022 год. Такой подход не соответствует методологии, рекомендованной ВОЗ.
 4. В рамках предположения, что распределение врачей по районам является близким к равномерному сообразно количеству населения районов, вероятность
    того, что Минздрав предоставил правдивые данные по Гродненской области составляет 3%, по другим областям – меньше 1%.
-
-{{< hr >}}
-
-{{<sup 1>}} https://medvestnik.by/news/itogi-raboty-za-god-podveli-v-guzo-po-vitebskoj-oblasti
-
-{{<sup 2>}} https://gomel-region.by/ru/society-ru/view/glavnoe-statisticheskoe-upravlenie-oblasti-podgotovilo-informativnyj-obzor-ko-dnju-meditsinskix-46753-2023/
-
-{{<sup 3>}} https://mosty.grodno-region.by/ru/region-news-ru/view/zdorovje-i-zhizn-nashix-patsientov-to-radi-chego-my-rabotaem-v-grodno-chestvovali-luchshix-meditsinskix-23671-2023/
-
-{{<sup 4>}} https://medvestnik.by/news/itogi-raboty-za-2022-god-podveli-na-kollegii-guzo-minoblispolkoma
-
-{{<sup 5>}} https://mogilev-region.gov.by/category/zdravookhranenie
