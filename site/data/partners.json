@@ -33,5 +33,10 @@
         "name": "Новая Беларусь",
         "url": "https://newbelarus.com/",
         "img" : "nb.jpg"
+    },
+    {
+        "name": "Беларусский Хельсинский комитет",
+        "url": "https://belhelcom.org/",
+        "img" : "bhc.svg"
     }
 ]
