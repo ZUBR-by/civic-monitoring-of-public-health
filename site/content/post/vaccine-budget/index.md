@@ -128,33 +128,3 @@ caption="Таблица 6. Планируемая стоимость закуп�
 6. При возможном реформировании здравоохранения в переходный период предпочтение может быть отдано именно закупкам лекарственных 
 средств (в том числе и вакцин) через международные агентства, в том числе и по причине совершенствования правовой базы и регуляторной 
 политики системы государственных закупок.
-
-{{<hr>}}
-
-{{<sup 1>}} https://minzdrav.gov.by/ru/ministerstvo/tsentralizovannye-zakupki.php
-
-{{<sup 2>}} https://pharma.by/zakupkils/goszakupki/goszakupki3/
-
-{{<sup 3>}} https://www.nbrb.by/statistics/forexmarket/avrexrate
-
-{{<sup 4>}} https://extranet.who.int/pqweb/vaccines/list-prequalified-vaccines
-
-{{<sup 5>}} https://www.e-gov.am/u_files/file/decrees/kar/2015/12/15_1546_1.pdf
-
-{{<sup 6>}} https://pharma.by/zakupkils/goszakupki/goszakupki2/
-
-{{<hr>}}
-
-{{<sup 1>}} https://www.unicef.org/supply/media/17981/file/IPV-vaccine-prices-17-07-2023.pdf
-
-{{<sup 2>}} https://www.unicef.org/supply/media/7226/file/MMR-vaccines-prices-30092021.pdf
-
-{{<sup 3>}} Цена в BYN c НДС; цена в USD рассчитана по средневзвешенному курсу Национального Банка Республики Беларусь (за май 2022 г.; за апрель 2023 г.)
-
-{{<sup 4>}} https://www.unicef.org/supply/media/15346/file/DTP-HepB-Hib-Penta-vaccines-prices-27122022.pdf
-
-{{<sup 5>}} https://www.unicef.org/supply/media/2816/file/HepA-vaccine-prices-06072021.pdf
-
-{{<sup 6>}} Цена в BYN c НДС; цена в USD рассчитана по средневзвешенному курсу Национального Банка Республики Беларусь (за июль 2022 г.; за июнь 2023 г.)
-
-{{<sup 8>}} https://www.unicef.org/supply/media/16961/file/PCV-vaccine-prices-25042023.pdf
