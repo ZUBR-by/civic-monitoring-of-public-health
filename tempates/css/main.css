@@ -448,7 +448,7 @@ sup a:hover {text-decoration:underline;}
   }
 .region-block {
   background:#fff;
-  padding:30px 20px 25px 20px;
+  padding:20px 20px 20px 20px;
   border:#E5E5E5 1px solid;
   border-radius:30px;
   box-shadow:rgba(0,0,0,.1) 0 5px 20px;
@@ -459,13 +459,13 @@ sup a:hover {text-decoration:underline;}
   }
 .region-block.link {
   height:100%;
-  display:flex;
+  display:inline-flex;
   align-items:center;
   }
 .region-block.link:hover {
   }
 .region-block.link h2 {
-  font-size:20px;
+  font-size:14px;
   font-weight:500;
   }
 .region-emblem {
@@ -478,7 +478,7 @@ sup a:hover {text-decoration:underline;}
   }
 .locality-list .region-list-links li {
   width:25%;
-  padding:15px 15px 15px 0;
+  padding:20px 20px 20px 0;
   }
 .locality-list h3 {
   font-size:18px;
@@ -491,6 +491,7 @@ sup a:hover {text-decoration:underline;}
   font-size:15px;
   font-weight:500;
   padding:10px 20px;
+  background:#fff;
   }
 .search-input:focus {
   border-color:#ff0000;
@@ -522,6 +523,9 @@ sup a:hover {text-decoration:underline;}
   background:#fff;
   border-radius:30px;
   box-shadow:rgba(0,0,0,0.15) 0 5px 35px;
+  }
+.stats-wrp h2 {
+  font-size:20px;
   }
 .stats-wrp + .stats-wrp {
   margin-top:30px;
