@@ -113,19 +113,21 @@
                 <div class="post-wrp pdng-30px pdng-t-40px mil-flex-column">
                     <div class="post-content">
                         <a href="{{.Permalink}}">
-                            <h2 class="post-header-link txt-size-32px mil-txt-size-26px">
+                            <h2 class="post-header-link mil-txt-size-26px">
                                 {{.Title}}
                             </h2>
                         </a>
                         <p class="mrgn-t-20px">
                             {{.Summary}}
                         </p>
-                        <a class="button txt-size-18px mrgn-t-20px" href="{{.Permalink}}">
-                            Читать дальше
-                            <span class="mrgn-l-5px">
+                        <div class="pdng-t-20px">
+                            <a class="button txt-size-16px" href="{{.Permalink}}">
+                                Читать дальше
+                                <span class="mrgn-l-5px">
                             <img src="/imgs/ui/naw-arrow.svg">
                         </span>
-                        </a>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

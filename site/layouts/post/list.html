@@ -16,12 +16,14 @@
                 <p class="mrgn-t-20px">
                     {{.Summary}}
                 </p>
-                <a class="button txt-size-18px mrgn-t-20px" href="{{ .Permalink }}">
-                    Прочитать
-                    <span class="mrgn-l-5px">
+                <div class="pdng-t-20px">
+                    <a class="button txt-size-18px" href="{{ .Permalink }}">
+                        Прочитать
+                        <span class="mrgn-l-5px">
                         <img src="/imgs/ui/naw-arrow.svg">
                     </span>
-                </a>
+                    </a>
+                </div>
             </div>
         {{ end }}
     </div>
