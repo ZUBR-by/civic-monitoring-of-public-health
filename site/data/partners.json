@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Белые Халаты",
+        "url": "https://t.me/belhalat_by",
+        "img" : "БелыеХалаты.jpg"
+    },
+    {
+        "name": "Фонд медицинской солидарности",
+        "url": "https://bymedsol.org/",
+        "img" : "bymedsol.png"
+    },
+    {
+        "name": "ZUBR.in",
+        "url": "https://zubr.in/",
+        "img": "zubr_in.png"
+    },
+    {
+        "name": "еЗдоровье",
+        "url": "https://okdoc.me/",
+        "img" : "ehealth.PNG"
+    },
+    {
+        "name": "BYSOL",
+        "url": "https://www.bysol.org/",
+        "img": "Bysol.svg"
+    },
+    {
+        "name": "FreeBelarusCenter",
+        "url": "https://freebelarus.center/",
+        "img" : "fbc.png"
+    },
+    {
+        "name": "Новая Беларусь",
+        "url": "https://newbelarus.com/",
+        "img" : "nb.jpg"
+    },
+    {
+        "name": "Беларусский Хельсинский комитет",
+        "url": "https://belhelcom.org/",
+        "img" : "bhc.svg"
+    }
+]

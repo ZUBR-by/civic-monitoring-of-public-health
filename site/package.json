@@ -4,16 +4,21 @@
     "private": true,
     "scripts": {
         "dev": "cd frontend && vite",
+        "dev-cms": "tinacms dev -c \"hugo server\"",
         "build": "cd frontend && vite build",
+        "build-cms": "tinacms build",
         "serve": "cd frontend && vite preview"
     },
     "dependencies": {
+        "@tinacms/cli": "^1.5.29",
         "ol": "6.15.1",
+        "tinacms": "^1.5.20",
         "vue": "3.3.4"
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "1.10.2",
         "@vue/compiler-sfc": "3.3.4",
+        "@types/node" : "20.5.9",
         "unplugin-auto-import": "0.8.7",
         "unplugin-vue-components": "0.19.6",
         "vite": "3.2.7"

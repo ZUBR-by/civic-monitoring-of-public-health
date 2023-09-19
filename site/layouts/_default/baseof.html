@@ -4,9 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>{{ .Site.Title }}</title>
+    {{$title := cond (gt (.Title | len) 0) .Title .Site.Title}}
+    {{$fullTitle := printf "%s - %s" $title .Site.Title}}
+    <meta name="title" content="{{$title}}">
+    <meta name="description" content="{{.Site.Title}}">
+    <title>{{$fullTitle}}</title>
     <link rel="stylesheet" href="/css/_zubr-framework.css">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css?var=3">
     <link rel="icon" type="image/png" href="/imgs/site-icons/128x128.png">
 </head>
 <body>

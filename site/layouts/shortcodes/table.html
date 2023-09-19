@@ -1,0 +1,27 @@
+{{ $src := .Get "src" }}
+{{ $caption := .Get "caption" }}
+{{ $notes := .Get "notes" }}
+{{ $dataFile := getCSV "," $src }}
+<div class="table-wrapper">
+    <p class="txt-size-12px txt-italic pdng-b-15px">
+        {{$caption | markdownify}}
+    </p>
+    <table>
+        {{ range $i, $r := $dataFile }}
+        {{if eq $i 0}}
+        <thead>
+        {{end}}
+        <tr>
+            {{range $element := $r}}
+            <td>{{ $element | markdownify }}</td>
+            {{end}}
+        </tr>
+        {{if eq $i 0}}
+        </thead>
+        {{end}}
+        {{end}}
+    </table>
+    <p class="txt-size-12px mrgn-t-10px">
+        {{$notes}}
+    </p>
+</div>

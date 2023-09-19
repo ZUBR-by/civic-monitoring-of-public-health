@@ -2,4 +2,4 @@
 build: compile
 
 compile:
-	yarn run build && hugo
+	yarn run build && yarn run build-cms && hugo

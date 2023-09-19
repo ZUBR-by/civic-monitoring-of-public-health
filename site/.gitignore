@@ -2,4 +2,5 @@
 public
 resources
 node_modules
-assets
+assets/generated/*
+yarn-error.log
