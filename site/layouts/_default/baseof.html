@@ -4,13 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    {{$title := cond (gt (.Title | len) 0) .Title .Site.Title}}
-    {{$fullTitle := printf "%s - %s" $title .Site.Title}}
-    <meta name="title" content="{{$title}}">
-    <meta name="description" content="{{.Site.Title}}">
-    <title>{{$fullTitle}}</title>
+    <title>{{ .Site.Title }}</title>
     <link rel="stylesheet" href="/css/_zubr-framework.css">
-    <link rel="stylesheet" href="/css/main.css?var=3">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="icon" type="image/png" href="/imgs/site-icons/128x128.png">
 </head>
 <body>
@@ -36,13 +32,12 @@
                 <div class="brgr-nav-links">
                     <a class="header-lnk txt-size-20px" href="/about/">О проекте</a>
                 </div>
-                <!-- . -->
                 <div class="mrgn-t-80px">
                     <div class="txt-size-16px txt-medium">
                         Сообщить о проблеме в здравоохранении:
                     </div>
                     <a class="report-button mil-flex-row mrgn-t-15px txt-size-13px" href="https://t.me/Monitoring_Bymedsol" target="_blank">
-                        <div class="section size-80">
+                        <div class="section report-button-txt size-80">
                             Сообщить о проблеме
                             <br>
                             через Telegram
@@ -52,7 +47,7 @@
                         </div>
                     </a>
                     <a class="report-button mil-flex-row mrgn-t-10px txt-size-13px" href="https://t.me/Monitoring_Bymedsol" target="_blank">
-                        <div class="section size-80">
+                        <div class="section report-button-txt size-80">
                             Сообщить о проблеме
                             <br>
                             через сайт
@@ -62,7 +57,6 @@
                         </div>
                     </a>
                 </div>
-                <!-- . -->
                 <div style="position:absolute; bottom:20px; left:20px;" class="txt-size-12px">©2023 Гражданский Мониторинг Системы Здравоохранения</div>
             </div>
         </div>
@@ -73,24 +67,26 @@
         </div>
     </div>
     <div class="report-button dropdown txt-size-13px mrgn-l-30px mil-notdisplay">
-        Сообщить о проблеме
-        <br>
-        в здравоохранении
+        <div>
+            Сообщить о проблеме
+            <br>
+            в здравоохранении
+        </div>
 
-        <div class="droplist">
-            <div class="droplist-unit">
-                Сообщить через Telegram
-            </div>
-            <div class="droplist-unit">
+        <div class="droplist size-100">
+            <a href="#" class="droplist-unit block txt-color-2">
+                Сообщить в Telegram
+            </a>
+            <a href="#" class="droplist-unit block txt-color-2">
                 Сообщить через сайт
-            </div>
+            </a>
         </div>
     </div>
 </header>
 {{ block "main". }}{{ end }}
 <footer class="footer inline-flex">
-    <div class="section">
-        <span class="">©2023 Гражданский Мониторинг Системы Здравоохранения</span>
+    <div class="section mil-flex-row mil-flex-algn-itms-c">
+        <span class="">©2023 <br class="notdisplay mil-show"> Гражданский Мониторинг <br class="notdisplay mil-show"> Системы Здравоохранения</span>
         <a class="header-lnk mrgn-l-30px" href="/about/">О проекте</a>
     </div>
 </footer>
