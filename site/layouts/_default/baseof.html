@@ -5,8 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>{{ .Site.Title }}</title>
-    <link rel="stylesheet" href="/css/_zubr-framework.css">
-    <link rel="stylesheet" href="/css/main.css">
+
+    {{ $style := resources.Get "css/_zubr-framework.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+    {{ $style := resources.Get "css/main.css" | minify | fingerprint  }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+
     <link rel="icon" type="image/png" href="/imgs/site-icons/128x128.png">
 </head>
 <body>
