@@ -46,11 +46,10 @@
                             <img src="/imgs/ui/naw-arrow.svg" style="filter:grayscale(1) brightness(10)">
                         </div>
                     </a>
-                    <a class="report-button mil-flex-row mrgn-t-10px txt-size-13px" href="https://t.me/Monitoring_Bymedsol" target="_blank">
+                    <a class="report-button mil-flex-row mrgn-t-10px txt-size-13px" href='{{.Param "form_url_clean"}}' target="_blank">
                         <div class="section report-button-txt size-80">
-                            Сообщить о проблеме
-                            <br>
-                            через сайт
+                                Сообщить о проблеме,
+                                <br> заполнив форму
                         </div>
                         <div class="section size-20">
                             <img src="/imgs/ui/naw-arrow.svg" style="filter:grayscale(1) brightness(10)">
@@ -74,11 +73,11 @@
         </div>
 
         <div class="droplist size-100">
-            <a href="#" class="droplist-unit block txt-color-2">
+            <a href="https://t.me/Monitoring_Bymedsol" class="droplist-unit block txt-color-2" target="_blank">
                 Сообщить в Telegram
             </a>
-            <a href="#" class="droplist-unit block txt-color-2">
-                Сообщить через сайт
+            <a href='{{.Param "form_url_clean"}}' class="droplist-unit block txt-color-2" target="_blank">
+                Сообщить, заполнив форму
             </a>
         </div>
     </div>
