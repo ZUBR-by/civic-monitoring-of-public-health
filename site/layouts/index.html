@@ -11,11 +11,13 @@
         <p class="txt-size-18px mrgn-t-30px">
             Мы верим, что совместными усилиями мы сможем значительно улучшить качество жизни каждого гражданина Беларуси.
         </p>
-        <a class="button txt-size-15px mrgn-t-30px"
+        <a class="button txt-size-15px mrgn-t-30px mil-flex-row mil-flex-algn-itms-c"
            target="_blank"
            rel="noopener"
            href="https://t.me/Monitoring_Bymedsol">
-            Cообщить о проблеме в здравоохранении
+            <span>
+                Cообщить о проблеме в здравоохранении
+            </span>
             <span class="mrgn-l-5px">
                 <img src="/imgs/ui/naw-arrow.svg">
             </span>
@@ -33,7 +35,7 @@
                    rel="noopener"
                    class="partner-wrp height-100 flex-column pdng-20px txt-algn-c border-1px border-color1">
                     <div class="partner-logo flex-row flex-algn-itms-c flex-grow-all pdng-t-15px pdng-b-20px">
-                        <img class="block size-100" src="/imgs/partners-logos/{{$partner.img}}" alt="{{$partner.name}}">
+                        <img class="block" src="/imgs/partners-logos/{{$partner.img}}" alt="{{$partner.name}}">
                     </div>
                     <div class="partner-name txt-size-15 txt-medium">
                         {{$partner.name}}
@@ -58,19 +60,21 @@
                 <div class="post-wrp pdng-30px pdng-t-40px mil-flex-column">
                     <div class="post-content">
                         <a href="{{.Permalink}}">
-                            <h2 class="post-header-link txt-size-24px mil-txt-size-24px">
+                            <h2 class="post-header-link mil-txt-size-26px">
                                 {{.Title}}
                             </h2>
                         </a>
                         <p class="mrgn-t-20px">
                             {{.Summary}}
                         </p>
-                        <a class="button txt-size-18px mrgn-t-20px" href="{{.Permalink}}">
-                            Читать дальше
-                            <span class="mrgn-l-5px">
-                            <img src="/imgs/ui/naw-arrow.svg">
-                        </span>
-                        </a>
+                        <div class="pdng-t-20px">
+                            <a class="button txt-size-16px" href="{{.Permalink}}">
+                                Читать дальше
+                                <span class="mrgn-l-5px">
+                                    <img src="/imgs/ui/naw-arrow.svg">
+                                </span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
