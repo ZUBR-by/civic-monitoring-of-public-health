@@ -1,0 +1,31 @@
+{{ define "main"}}
+<div class="content pdng-30px pdng-t-140px mil-pdng-10px mil-pdng-t-100px">
+    <div class="size-80 max-size-800px pdng-30px pdng-b-60px pdng-t-20px txt-lh-1_1em mil-size-100 mil-pdng-20px mil-pdng-b-50px">
+        <h1 class="txt-size-18px txt-medium">
+            Публикации
+        </h1>
+    </div>
+    <div class="post-list-wrp">
+        {{ range where .Pages "Draft" false }}
+            <div class="post-wrp pdng-30px pdng-t-40px mil-flex-column">
+                <a href="{{ .Permalink }}">
+                    <h2 class="post-header-link txt-size-32px mil-txt-size-24px">
+                        {{.Title}}
+                    </h2>
+                </a>
+                <p class="mrgn-t-20px">
+                    {{.Summary}}
+                </p>
+                <div class="pdng-t-20px">
+                    <a class="button txt-size-18px" href="{{ .Permalink }}">
+                        Прочитать
+                        <span class="mrgn-l-5px">
+                        <img src="/imgs/ui/naw-arrow.svg">
+                    </span>
+                    </a>
+                </div>
+            </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
