@@ -612,6 +612,14 @@ sup a:hover {text-decoration:underline;}
   font-size:12px;
   font-weight:500;
   }
+.histogram-unit-description .line {
+  width: 1px;
+  height: 20px;
+  background:rgba(255,0,0,0.35);
+  position: absolute;
+  bottom: 100%;
+  z-index: -1;
+  }
 
 
 
