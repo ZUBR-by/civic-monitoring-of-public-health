@@ -7,6 +7,7 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body {background: #F3F3F3;}
 
 /* Burger Menu */
 #brgrbtn {
@@ -68,6 +69,7 @@ input#brgrbtn:checked + .burger-button .burger-button-line:last-child,
   top:0;
   left:-100%;
   width:65%;
+  min-width:290px;
   height:100%;
   padding:100px 5% 10% 5%;
   background:transparent;
@@ -115,23 +117,27 @@ input#brgrbtn:checked + label + .brgr-nav {
 
 
 /* Header */
-.header {
+.header-wrp {
   position:fixed;
+  display:flex;
+  align-items:center;
   top:20px;
   left:20px;
+  z-index:100;
+  }
+.header {
   background:#fff;
   border:#D9D9D9 1px solid;
   border-radius:30px;
   box-shadow:rgba(0,0,0,0.15) 0 10px 40px;
   overflow:hidden;
-  z-index:100;
   }
-.header .section {
+.header > .section {
   flex-shrink:0;
   padding:12px 30px;
   }
-.header .section + .section:after,
-.header .section.mobnav:after {
+.header > .section + .section:after,
+.header > .section.mobnav:after {
   content:'';
   position:absolute;
   left:-1px;
@@ -146,7 +152,7 @@ input#brgrbtn:checked + label + .brgr-nav {
 .header .section.logo-btn:active {
   background:#FFF2F2;
   }
-.header .section:last-child {
+.header > .section:last-child {
   padding-right:50px;
   }
 
@@ -223,6 +229,36 @@ input#brgrbtn:checked + label + .brgr-nav {
   border-bottom:rgba(255,0, 0,0.5) 2px solid;
   }
 
+
+/* Post Elements */
+.post-content.post-markdown p {
+  margin-top: 20px;
+    }
+.post-content.post-markdown figure {
+  margin-top: 20px;
+    }
+.post-content.post-markdown ol {
+  margin-top: 20px;
+    }
+.post-content.post-markdown ul {
+  margin-top: 20px;
+    }
+.post-content.post-markdown h3 {
+  margin-top: 50px;
+    }
+.post-content.post-markdown h2 {
+  margin-top: 50px;
+    }
+
+.post-content.post-markdown h4 {
+  margin-top: 20px;
+  font-weight:500;
+    }
+.post-content.post-markdown h1 {
+  margin-bottom: 50px;
+    }
+/* end Post Elements */
+
 .partner-wrp {
   background:#fff;
   border-radius:30px;
@@ -236,6 +272,8 @@ input#brgrbtn:checked + label + .brgr-nav {
 .partner-logo {
   }
 .partner-logo img {
+  max-height:80px;
+  max-width:80%;
   margin: 0 auto;
   }
 
@@ -249,6 +287,52 @@ h1, a, .button, .txt-color-1 {
   }
 .button:hover, .button.active, .button.primary {
   background:red;
+  }
+.button:hover * {
+  color:#fff;
+  }
+.button:hover img[src$="naw-arrow.svg"] {
+  filter:grayscale(1) brightness(10);
+  }
+.report-button {
+  align-items:center;
+  color:#fff;
+  font-weight:500;
+  padding:8px 15px 8px 15px;
+  background:red;
+  border:red 1px solid;
+  border-radius:18px;
+  }
+.report-button:hover {
+  box-shadow:rgba(255,0,0, 0.3) 0 5px 10px;
+  }
+.report-button:hover .report-button-txt {
+  color:#fff;
+  }
+.report-button .section:last-child {
+  text-align:right;
+  }
+.report-button.dropdown {
+  padding:8px 40px 8px 15px;
+  }
+.report-button.dropdown:after {
+  content:'';
+  position:absolute;
+  width:16px;
+  height:10px;
+  right:15px;
+  top:calc(50% - 5px);
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.75 7.75002C8.75001 7.19774 8.30231 6.75001 7.75002 6.75C7.19774 6.74999 6.75001 7.19769 6.75 7.74998L8.75 7.75002ZM7.04287 8.95709C7.43338 9.34762 8.06655 9.34764 8.45708 8.95712L14.8212 2.5933C15.2117 2.20279 15.2117 1.56962 14.8212 1.17909C14.4307 0.788555 13.7975 0.788541 13.407 1.17906L7.75002 6.83578L2.09329 1.1788C1.70278 0.788271 1.06961 0.788257 0.679078 1.17877C0.288545 1.56929 0.288531 2.20245 0.679047 2.59299L7.04287 8.95709ZM6.75 7.74998L6.74999 8.24998L8.74999 8.25002L8.75 7.75002L6.75 7.74998Z' fill='white'/%3E%3C/svg%3E%0A");
+  zoom:0.8;
+  }
+
+.report-button.dropdown .droplist {
+  display:none;
+  color:#000;
+  font-weight:normal;
+  }
+.report-button.dropdown:hover .droplist {
+  display:block;
   }
 hr {
   height:3px;
@@ -715,11 +799,11 @@ sup a:hover {text-decoration:underline;}
     width:device-width;
     }
 
-  .header {
+  .header-wrp {
     top:5px;
     left:5px;
     }
-  .header .section {
+  .header > .section {
     padding:10px 20px;
     }
   .header .logo-btn {
