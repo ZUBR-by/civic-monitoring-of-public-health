@@ -7,6 +7,8 @@
                 <a class="header-lnk" href="/post/">Отчеты</a>
             </div>
         </div>
+        {{ $length := len (where .Resources ".MediaType.Type" "!=" "text/csv")}}
+        {{if ne $length 0}}
         <div class="post-additions">
             <div class="section pdng-t-40px pdng-r-30px pdng-l-30px pdng-b-30px">
                 <h2 class="txt-size-26px mil-txt-size-24px">
@@ -36,6 +38,7 @@
                 {{end}}
             </div>
         </div>
+        {{end}}
         <div class="post-content post-markdown">
             <h1 class="txt-size-32px mil-txt-size-26px">
                 {{.Title}}
