@@ -276,7 +276,7 @@ p.quote:after {
 .tab-unit:only-child {
     border-radius:15px;
     }
-
+.dropdown {}
 .droplist {
     position:absolute;
     top:calc(100% - 3px);
@@ -441,6 +441,8 @@ p.quote:after {
 .flex-algn-slf-strch {align-self:stretch}
 .flex-algn-slf-s {align-self:start;}
 .flex-algn-slf-e {align-self:end;}
+
+.flex-justify-sb {justify-content:space-between}
 
 .order-1 {order:1;}
 .order-2 {order:2;}
