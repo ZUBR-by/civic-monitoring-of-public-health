@@ -8,7 +8,7 @@ draft: false
 
 During the 154th session of the WHO Executive Board, the representative from the Republic of Belarus made a statement, which among other things, highlighted that the country has a high provision of hospital beds, totaling 103.7 per 10,000 inhabitants, ensuring high accessibility of hospital care [1].
 
-The Medical Solidarity Fund review gathered information from open sources on the number of hospital beds in the Republic of Belarus for the period from 2019 to 2023.
+The Medical Solidarity Foundation review gathered information from open sources on the number of hospital beds in the Republic of Belarus for the period from 2019 to 2023.
 
 Study Objectives.
 - The primary objective is to assess the number of hospital beds in the Republic of Belarus at the end of 2023.
@@ -64,7 +64,7 @@ For the year 2023, the official sources do not provide this indicator's value. H
 Based on the collected data:
 
 {{<table
-src="content/post/hospital-availability-2023-en/table1.csv"
+src="content/post/hospital-availability-2023-en/table3.csv"
 caption="Table 3. Number of Hospital Beds in the Republic of Belarus"
 >}}
 
